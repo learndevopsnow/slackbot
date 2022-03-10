@@ -1,0 +1,6 @@
+Flask
+requests
+slackclient
+slackeventsapi
+urllib3
+prompt-toolkit

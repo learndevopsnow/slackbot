@@ -1,0 +1,15 @@
+applications:
+- name: crowdstrike-slackbot-prod
+  disk_quota: 2048M
+  health-check-type: http
+  health-check-http-endpoint: /crowdstrikeslack/health
+  instances: 1
+  memory: 2G
+  stack: cflinuxfs3
+  docker:
+    image: hub.comcast.net/epsengineering/crowdstrike-slackbot:v1.1.4
+    username: <NTID>
+  routes:
+  - route: crowdstrike-slackbot-prod.as-b9.cf.comcast.net
+  services:
+  - crowdstrike-slackbot-proxy-prod
